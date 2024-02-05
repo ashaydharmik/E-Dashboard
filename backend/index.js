@@ -19,7 +19,11 @@ app.use("/", require("./routes/userRoute"))
 
 //mongodb connection
 app.listen(process.env.PORT, ()=>{
-    mongoose.connect(process.env.MONGODB_CONNECT)
+    mongoose.connect(process.env.MONGODB_CONNECT, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        retryWrites: true, 
+    })
     .then(()=> console.log(`mongodb connected and server is running at port ${process.env.PORT}`))
     .catch((error)=> console.log(error))
 })
