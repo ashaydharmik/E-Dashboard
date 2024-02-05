@@ -1,0 +1,34 @@
+
+.header{
+    background: rgb(0, 84, 168);
+    height:8vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    ul{
+     width: 100%;
+    margin-left: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    li{
+        font-size: 1.8rem;
+    padding: 0 1rem;
+    list-style: none;
+    a{
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover{
+            color: black;
+        }
+    }
+    }
+}
+.register{
+    justify-content: flex-end;
+    margin-right: 3rem;
+}
+ 
+}

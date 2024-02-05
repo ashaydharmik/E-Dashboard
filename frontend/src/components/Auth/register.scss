@@ -1,0 +1,49 @@
+.register-container {
+  width: 100%;
+  height: 87vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: antiquewhite;
+
+   
+    .heading {
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .form-container {
+      width: 100%;
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        input {
+          width: 40%;
+          height: 4rem;
+          font-weight: 600;
+          padding-left: 1rem;
+        }
+        .buttons {
+          margin-top: 2rem;
+          button {
+            width: 20rem;
+            height: 4rem;
+            font-size: 2rem;
+            background-color: dodgerblue;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  
+}
