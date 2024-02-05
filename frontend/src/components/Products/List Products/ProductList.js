@@ -19,7 +19,7 @@ const ProductList = () => {
         "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
       };
       axios
-      .get("https://e-dashboard-5n7q.onrender.com/allProducts", {headers})
+      .get("http://localhost:5000/allProducts", {headers})
       .then((res) => {
         setShowProducts(res.data);
         console.log(res.data);
@@ -36,7 +36,7 @@ const ProductList = () => {
           'Content-Type': 'application/json', 
           "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
         };
-        axios.delete(`https://e-dashboard-5n7q.onrender.com/deleteProducts?_id=${id}`,{headers})
+        axios.delete(`http://localhost:5000/deleteProducts?_id=${id}`,{headers})
         .then(() => {
          handleShowProducts();
          toast.success("Product Successfully Deleted!")
@@ -53,7 +53,7 @@ const ProductList = () => {
           "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
         };
         if(key){
-          axios.get(`https://e-dashboard-5n7q.onrender.com/searchProduct/${key}`, {headers})
+          axios.get(`http://localhost:5000/searchProduct/${key}`, {headers})
           .then((res)=>{
               setShowProducts(res.data)
               console.log(res.data)

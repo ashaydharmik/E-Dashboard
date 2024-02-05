@@ -18,16 +18,25 @@ const navigate = useNavigate();
       }))
       };
 
-      useEffect(() => {          
+      useEffect(() => {
+        // Check if 'id' parameter is present
+        if (!params.id) {
+          // Redirect to another page if 'id' is not present
+          navigate('/');
+        } else {
+          // Fetch data when 'id' is present
           getProductData();
-      }, []);
+        }
+    
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [params.id]);
 
 const getProductData=()=>{
   const headers = {
     'Content-Type': 'application/json', 
   "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
   };
-    axios.get(`https://e-dashboard-5n7q.onrender.com/singleProduct/${params.id}`,{headers})
+    axios.get(`http://localhost:5000/singleProduct/${params.id}`,{headers})
     .then((res)=>{
         setProductData(res.data.availableProduct)
         console.log(res.data.availableProduct)
@@ -45,7 +54,7 @@ const handleUpdateProduct=(e)=>{
         'Content-Type': 'application/json', 
       "Authorization": `Bearer ${JSON.parse(localStorage.getItem("token"))}`
       };
-axios.put(`https://e-dashboard-5n7q.onrender.com/updateProducts/${params.id}`,productData,{headers})
+axios.put(`http://localhost:5000/updateProducts/${params.id}`,productData,{headers})
 .then((res)=>{
     setProductData(res.data.availableProduct)
     console.log("product updated")

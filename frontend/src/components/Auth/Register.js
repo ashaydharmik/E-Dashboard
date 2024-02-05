@@ -29,7 +29,7 @@ const Register = () => {
     e.preventDefault();
     console.log(formData);
   
-    axios.post("https://e-dashboard-5n7q.onrender.com/register", formData)
+    axios.post("http://localhost:5000/register", formData)
       .then((response) => {
         setFormData(response.data);
        localStorage.setItem("user", JSON.stringify(response.data))

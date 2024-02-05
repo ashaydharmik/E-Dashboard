@@ -30,7 +30,7 @@ const Login = () => {
     e.preventDefault();
     console.log(formData);
   
-    axios.post("https://e-dashboard-5n7q.onrender.com/login", formData)
+    axios.post("http://localhost:5000/login", formData)
       .then((response) => {
           setFormData(response.data);
          localStorage.setItem("user", JSON.stringify(response.data))
